@@ -5,7 +5,7 @@ require_once "header.php";
 <form method="post">
     <table>
         <tr><td>Количество строчек</td><td><input type="text" name="tr"></td></tr>
-        <tr><td>Количество столбцов</td><td><input type="text" name="td"></td></tr>
+        <tr><td>Количество столбиков</td><td><input type="text" name="td"></td></tr>
         <tr><td><input type="submit" value="Нарисовать таблицу"></td></tr>
     </table>
 </form>
