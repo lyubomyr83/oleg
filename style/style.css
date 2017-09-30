@@ -1,0 +1,16 @@
+.first_line
+{
+    background-color: orangered;
+}
+
+.other_lines
+{
+    background-color: slateblue;
+}
+
+table, td
+{
+    border: solid 1px blue;
+    margin: 0;
+    padding: 0;
+}
