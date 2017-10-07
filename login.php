@@ -30,10 +30,12 @@ $age = $_POST["age"];
 
 if ($name == "Олег" && $surname == "Назаренко" && $age == 11)
 {
-    echo "добро пожаловать КОРОЛЬ";
+   require_once "dannye.php";
 }
 else
 {
-echo "вы раб КОРОЛЯ Олега";
+echo "Вы зарегистрированы <br>";
 }
 ?>
+
+<a href ="index.php">назад</a>
