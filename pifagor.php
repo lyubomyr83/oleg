@@ -1,4 +1,5 @@
 <?php
+$page_name = "Таблица Пифагора";
 require_once "header.php";
 ?>
 <table cellspacing="1"></table>
