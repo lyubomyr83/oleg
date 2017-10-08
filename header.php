@@ -10,5 +10,5 @@
 
 <body>
 <div class="row">
-    <div class="col-md-6"><?php require_once "menu.php";?></div>
-    <div class="col-md-6">
+    <div class="col-md-3"><?php require_once "menu.php";?></div>
+    <div class="col-md-9">

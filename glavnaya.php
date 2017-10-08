@@ -1,5 +1,5 @@
 <?php
- echo " <br>" ;
+ echo "ха-ха-ха <br>" ;
 ?>
 
 <a href="index.php">назад</a>
