@@ -1,26 +1,16 @@
-
-
 <form method = "post">
     <table>
         <tr>
-            <td>ваше имя</td>
-            <td><input type="text" name = "imja"></td>
-        </tr>
-        <tr>
-            <td>ваша фамилия</td>
-            <td><input type="text" name="surname"></td>
+            <td>Логин</td>
+            <td><input type="text" name = "login"></td>
         </tr>
         <tr>
             <td>Пароль</td>
-            <td><input type="text" name="Пароль"></td>
-        </tr>
-        <tr>
-            <td>Пароль2</td>
-            <td><input type="text" name="Пароль2"></td>
+            <td><input type="password" name="pass"></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="войти"></td>
+            <td><input type="submit" value="Войти"></td>
         </tr>
 
     </table>
@@ -28,19 +18,17 @@
 
 <?php
 
-$name = $_POST["imja"];
-$surname = $_POST["surname"];
-$Пароль = $_POST["Пароль"];
-$Пароль2 = $_POST["Пароль2"];
+$login = $_POST["login"];
+$password = $_POST["pass"];
 
-if ($name == "Олег" && $surname == "Назаренко" && $Пароль == 567894321 && $Пароль2 == 987651234)
-{
-   require_once "DNEVNIK.php";
-}
-else
-{
-echo "Вы не зарегистрированы <br>";
-}
-?>
+$valid_login = "Олег";
+$valid_password = 567894321;
 
-<a href="index.php">назад</a>
+if ($login == $valid_login && $password == $valid_password)
+{
+    $_SESSION['login']=1;
+    $_SESSION['pass']=1;
+
+    echo "Вход выполнен успешно";
+    header('Refresh: 5; URL=index.php');
+}

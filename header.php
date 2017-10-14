@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['login']) && !isset($_SESSION['pass']))
+{
+    echo "Войти";
+}
+else
+{
+    echo "Олег|вход выполнен";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -10,5 +23,10 @@
 
 <body>
 <div class="row">
-    <div class="col-md-3"><?php require_once "menu.php";?></div>
+    <div class="col-md-3">
+        <?php
+        require_once "menu.php";
+        require_once "login.php";
+        ?>
+    </div>
     <div class="col-md-9">

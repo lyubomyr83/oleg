@@ -1,5 +1,8 @@
 <?php
+session_start();
+
 $page_name = "Таблица Пифагора";
+require_once "header.php";
 ?>
 <table cellspacing="1"></table>
 <form method="post">
@@ -53,5 +56,3 @@ for($i=1;$i<=$tr;$i++)
 </table>
 <?php
 require_once "footer.php";
-?>
-<a href="index.php">назад</a>
