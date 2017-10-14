@@ -3,6 +3,7 @@ session_start();
 
 $page_name = "Таблица Пифагора";
 require_once "header.php";
+require_once "body.php";
 ?>
 <table cellspacing="1"></table>
 <form method="post">

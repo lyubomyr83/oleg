@@ -30,3 +30,8 @@ else
         ?>
     </div>
     <div class="col-md-9">
+        <?php
+        if (isset($_SESSION['login']) && isset($_SESSION['pass']))
+        {
+            require_once "body.php";
+        }
