@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$page_name = "Главная";
+$page_name = "Игра в кости";
 require_once "header.php";
-//hello();
-//diskr(3,8,6);
+require_once "body.php";
 
+kosti();
 require_once "footer.php";

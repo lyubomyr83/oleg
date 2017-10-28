@@ -9,6 +9,9 @@ else
 {
     echo "Олег|вход выполнен";
 }
+
+// подключаем библиотеку с функциями
+require_once "lib/functions.php";
 ?>
 
 <!DOCTYPE html>
