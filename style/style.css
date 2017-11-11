@@ -15,5 +15,44 @@ table, td {
 }
 
 body{
+    background-color: red;
+}
+
+.kosti_table{
     background-color: green;
+    border-radius: 2%;
+    padding: 5%;
+    margin-left: 15px;
+}
+
+.kosti_header{
+    text-align: center;
+    padding-bottom: 10%;
+    color: yellow;
+}
+
+.kosti_message{
+    text-align: center;
+    margin-top: 30px;
+    font-size: large;
+    color: white;
+    font-style: italic;
+}
+
+.kosti_img{
+    text-align: center;
+    border: 4px double white;
+    border-radius: 10px;
+}
+
+.kosti_button{
+    text-align: center;
+    display: block;
+    color: white;
+    background-color: grey;
+    font-size: large;
+}
+
+a:hover{
+    background-color: yellow;
 }
