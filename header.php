@@ -12,6 +12,9 @@ else
 
 // подключаем библиотеку с функциями
 require_once "lib/functions.php";
+
+// подключаемся к БД
+require_once "db.php";
 ?>
 
 <!DOCTYPE html>
