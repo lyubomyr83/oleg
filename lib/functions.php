@@ -23,3 +23,16 @@ function kosti(){
 
     echo "<div class=\"kosti_message\">Вам выпали числа на сумму ".$sum."</div>";
 }
+
+// реализация запроса к БД
+function sql($connection,$query)
+{
+    $result = mysqli_query($connection, $query);
+
+    // если запрос не удался, выдаем сообщение об ошибке
+    if (!$result)
+    {
+        die ("Ошибка запроса к базе данных: ". mysqli_error());
+    }
+    return $result;
+}
