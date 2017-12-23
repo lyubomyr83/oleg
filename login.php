@@ -1,19 +1,13 @@
-<form method = "post">
-    <table>
-        <tr>
-            <td>Логин</td>
-            <td><input type="text" name = "login"></td>
-        </tr>
-        <tr>
-            <td>Пароль</td>
-            <td><input type="password" name="pass"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Войти"></td>
-        </tr>
+<form class="form-horizontal login" method="post">
 
-    </table>
+    <div class="form-group">
+        <input type="text" class="form-control" name = "login" placeholder="Логин">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" name = "pass" placeholder="Логин">
+    </div>
+    <button type="submit" class="btn btn-default">Войти</button>
+
 </form>
 
 <?php

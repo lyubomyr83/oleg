@@ -55,11 +55,17 @@ function info_from_db($connection_id, $what,$id=NULL)
 
         }
         // виводим элементы меню
-        echo "<ul>";
+        echo "<ul class=\"nav nav-pills nav-stacked\">\n";
         foreach ($pages as $value){
-            echo "<li role=\"presentation\" class=\"active\"><a href='?page=".$value['id']."'><span class=\"".$value['menu_icon']."\" aria-hidden=\"true\"></span>".$value['menu_name']."</a></li>";
+            echo "\t\t<li role=\"presentation\" class=\"active\"><a href='?page=".$value['id']."'><span class=\"".$value['menu_icon']."\" aria-hidden=\"true\"></span> ".$value['menu_name']."</a></li>\n";
         }
-        echo "</ul>";
+
+        if (($_SESSION['login']) && ($_SESSION['pass']))
+        {
+            echo "\t\t<li role=\"presentation\" class=\"active\"><a href=\"logout.php\"><span class=\"glyphicon glyphicon-log-in\" aria-hidden=\"true\"></span> Выйти</a></li>\n";
+
+        }
+        echo "\t</ul>\n";
     }
     // страница
     elseif ($what == "page"){

@@ -3,11 +3,7 @@
     <li role="presentation" class="active"><a href="pifagor.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Таблица Пифагора</a></li>
     <li role="presentation" class="active"><a href="kosti.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Игра в кости</a></li>
     <?php
-        if (($_SESSION['login']) && ($_SESSION['pass']))
-        {?>
-            <li role="presentation" class="active"><a href="logout.php"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>Выйти</a></li>
-        <?php
-        }
+
     ?>
 
 </ul>

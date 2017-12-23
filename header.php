@@ -16,11 +16,7 @@ require_once "db.php";
 // подключаем библиотеку с функциями
 require_once "lib/functions.php";
 
-if (!isset($_SESSION['login']) && !isset($_SESSION['pass']))
-{
-    echo "Войти";
-}
-else
+if (isset($_SESSION['login']) && isset($_SESSION['pass']))
 {
 
     if($_GET['page'])
@@ -29,20 +25,16 @@ else
     }
 ?>
     <title><?php echo $page['title'];?></title>
-    </head>
-    <body>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-3 menu">
     <?php
-    echo "Олег|вход выполнен";
+    echo "Олег|вход выполнен\n\t";
     // выводим меню
     info_from_db($connection_id, "menu");
-
-?>
-
-<div class="row">
-    <div class="col-md-3">
-        <?php
-
+}
         require_once "login.php";
         ?>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
