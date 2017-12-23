@@ -7,5 +7,5 @@ $connection_id = mysqli_connect($host, $user, $password, $db_name);
 mysqli_query($connection_id, "set names utf8") or die ("set names utf8 failed");
 
 if($connection_id){
-    echo "Подключились к БД";
+    //echo "Подключились к БД";
 }

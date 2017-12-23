@@ -36,3 +36,37 @@ function sql($connection,$query)
     }
     return $result;
 }
+
+// вывод информации с БД
+
+function info_from_db($connection_id, $what,$id=NULL)
+{
+    // формируем меню
+    if($what == "menu"){
+
+        $query = "SELECT * FROM pages";
+
+        $res = sql($connection_id,$query);
+
+
+        while ($page = mysqli_fetch_assoc($res))
+        {
+            $pages[]=$page;
+
+        }
+        // виводим элементы меню
+        echo "<ul>";
+        foreach ($pages as $value){
+            echo "<li role=\"presentation\" class=\"active\"><a href='?page=".$value['id']."'><span class=\"".$value['menu_icon']."\" aria-hidden=\"true\"></span>".$value['menu_name']."</a></li>";
+        }
+        echo "</ul>";
+    }
+    // страница
+    elseif ($what == "page"){
+        $query = "SELECT * FROM pages WHERE id=".$id;
+        $res = sql($connection_id,$query);
+        $page = mysqli_fetch_assoc($res);
+        return $page;
+    }
+
+}
