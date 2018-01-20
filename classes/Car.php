@@ -8,6 +8,7 @@ class Car
     public $fary;
     public $otdelka;
     public $brand;
+    public static $name = " автомобиля";
 
     public function go()
     {
@@ -30,7 +31,7 @@ class Car
 
     public function aboutcar()
     {
-        echo "Марка автомобиля: ".$this->brand."<br>";
+        echo "Марка".static::$name.": ".$this->brand."<br>";
         echo "Цвет автомобиля: ".$this->color."<br>";
         echo "Коробка передач: ".$this->kpp."<br>";
         echo "Тип фар: ".$this->fary."<br>";
