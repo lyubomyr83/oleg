@@ -8,6 +8,7 @@ class Car
     public $fary;
     public $otdelka;
     public $brand;
+    public static $kol;
     public static $name = " автомобиля";
 
     public function go()
@@ -24,7 +25,7 @@ class Car
         $this->brand = $b;
         echo "<br><br>";
         $this->aboutcar();
-
+        static::$kol++;
     }
 
 

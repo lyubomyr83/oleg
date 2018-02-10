@@ -13,6 +13,11 @@ session_start();
 // подключаемся к БД
 require_once "db.php";
 
+// автозагрузка классов
+function __autoload($name){
+    require_once "classes/".$name.".php";
+}
+
 // подключаем библиотеку с функциями
 require_once "lib/functions.php";
 

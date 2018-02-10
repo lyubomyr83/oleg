@@ -4,6 +4,7 @@
 class Bus extends Car
 {
     public $seats;
+    public static $kol;
     public static $name = " автобуса";
 
     public function __construct($c, $k, $f, $o, $b, $s)

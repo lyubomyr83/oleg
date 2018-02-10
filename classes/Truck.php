@@ -4,6 +4,7 @@
 class Truck extends Car
 {
    public $gruzpool;
+    public static $kol;
    public static $name = " грузовика";
 
    public function __construct($c, $k, $f, $o, $b, $g)
