@@ -18,5 +18,7 @@ require_once "lib/functions.php";
 
 // Создаём нужные объекты
 $menuobj = new \app\classes\Cmenu(); // для работы с меню
-// для работы с контентом
+$contentobj = new \app\classes\Ccontent(); // для работы с контентом
 
+// роутер
+require_once "router.php";
