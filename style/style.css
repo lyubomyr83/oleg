@@ -1,0 +1,29 @@
+body
+{
+    background: url("../img/menu_background.jpg");
+    color: whitesmoke;
+}
+#menu li
+{
+    list-style-type: none;
+}
+
+#menu a
+{
+    display: block;
+    text-decoration: none;
+    background-color: #1C527F;
+    color: whitesmoke;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+#menu a:hover
+{
+    background-color: darkgreen;
+    transition-duration: 1s;
+    padding-left: 40px;
+
+}

@@ -20,5 +20,3 @@ require_once "lib/functions.php";
 $menuobj = new \app\classes\Cmenu(); // для работы с меню
 $contentobj = new \app\classes\Ccontent(); // для работы с контентом
 
-// роутер
-require_once "router.php";
