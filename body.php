@@ -1,7 +1,7 @@
 <div id="container">
-    <div class="row">
+    <div class="row header">
         <div class="col-md-2">
-
+            <img src="img/PHP-Logo-PNG-Clipart-180x180.png" width="150">
         </div>
         <div class="col-md-9">
             <h1> Личный сайт Олега Назаренко</h1>

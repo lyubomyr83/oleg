@@ -18,7 +18,13 @@ body
     width: 99%;
 }
 
-ul{
+.header
+{
+    text-align: center;
+}
+
+ul
+{
 
     padding-left: 0px;
     margin-left: 0px;
@@ -62,4 +68,7 @@ ul{
     border-radius: 10px;
     padding-top: 20px;
     margin-bottom: 10px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%)
 }
