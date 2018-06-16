@@ -19,4 +19,8 @@ require_once "lib/functions.php";
 // Создаём нужные объекты
 $menuobj = new \app\classes\Cmenu(); // для работы с меню
 $contentobj = new \app\classes\Ccontent(); // для работы с контентом
-
+$teacher = new \app\classes\Cclass();
+echo $teacher->getInfo(5)."<br>";
+echo $teacher->getInfo2(8)."<br>";
+$AHome = new \app\classes\Cclass();
+echo $AHome->getInfo3(3);
