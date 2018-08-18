@@ -13,4 +13,11 @@ class CCRUD extends MCRUD
         }
         return $pages;
     }
+
+    public function editPage($id)
+    {
+        $result = $this->getPageDataForEdit($id);
+        $page = mysqli_fetch_assoc($result);
+        return $page;
+    }
 }
