@@ -7,7 +7,7 @@ html {
 
 body
 {
-    background: url("../img/menu_background.jpg");
+    background: url("../../img/menu_background.jpg");
     color: whitesmoke;
     margin-bottom: 60px;
 }
@@ -35,6 +35,11 @@ li
 {
     list-style-type: none;
     margin-left: 0;
+}
+
+input, textarea
+{
+    color: black;
 }
 
 #menu a

@@ -6,8 +6,24 @@ $page = $editPage->editPage($_GET["id"]);
     Редактирование страницы <?=$page['menu_name']?>
 </h2>
 <form method="post">
-    title<input type="text" name="title" value="<?=$page['title']?>">
-    иконка<input type="text" name="menu_icon" value="<?=$page['menu_icon']?>">
-    название в меню<input type="text" name="menu_name" value="<?=$page['menu_name']?>">
-    контент
+    <div class="row">
+        <div class="col-md-1">title</div>
+        <div class="col-md-11"><input type="text" name="title" value="<?=$page['title']?>"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">иконка</div>
+        <div class="col-md-11"><input type="text" name="menu_icon" value="<?=$page['menu_icon']?>"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">название в меню</div>
+        <div class="col-md-11"> <input type="text" name="menu_name" value="<?=$page['menu_name']?>"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">контент</div>
+        <div class="col-md-11"><textarea rows="5" cols="48" name="content"><?=$page['content']?></textarea></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11"><input type="submit" value="Сохранить"></div>
+    </div>
 </form>

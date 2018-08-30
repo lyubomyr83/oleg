@@ -10,3 +10,12 @@ if($_GET)
         require_once "views/VPageEdit.php";
     }
 }
+
+if($_POST)
+{
+    if($_GET["page"]=="edit")
+    {
+        $page = new \app\classes\CCRUD();
+        $page->updatePage($_GET["id"],$_POST);
+    }
+}

@@ -20,4 +20,9 @@ class CCRUD extends MCRUD
         $page = mysqli_fetch_assoc($result);
         return $page;
     }
+
+    public function updatePage($id, $data)
+    {
+        $result = $this->updatePageData($id, $data);
+    }
 }
