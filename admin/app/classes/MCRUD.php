@@ -30,8 +30,12 @@ class MCRUD
 
         $sql.= " WHERE id='{$id}'";
 
-        echo $sql;
-        $result = Db::getInstance()->sql($sql);
-        return $result;
+        if($result = Db::getInstance()->sql($sql))
+        {
+            echo "<span class='green'><br><br>Данные успешно обновлены!!!</span>";
+            header( 'Refresh:2; URL=' );
+            return $result;
+        }
+
     }
 }

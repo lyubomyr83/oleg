@@ -1,5 +1,6 @@
 <?php
 $content = $contentobj->getContent($_GET['page']);
+echo $content['content'];
 if($_GET['page']==4)
 {
     pifagor(9,9);
@@ -41,7 +42,5 @@ elseif($_GET['page']==6)
     </table>
     <?php
 }
-else
-{
-    echo $content['content'];
-}
+
+

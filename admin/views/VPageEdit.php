@@ -3,7 +3,7 @@ $editPage = new app\classes\CCRUD();
 $page = $editPage->editPage($_GET["id"]);
 ?>
 <h2>
-    Редактирование страницы <?=$page['menu_name']?>
+    Редактирование страницы <?="<a target=\"_blank\" href=\"http://localhost/oleg/?page={$_GET["id"]}\">{$page['menu_name']}</a>"?>
 </h2>
 <form method="post">
     <div class="row">

@@ -63,6 +63,11 @@ input, textarea
 
 }
 
+.green
+{
+    color: green;
+}
+
 #footer {
     position: absolute;
     bottom: 0;
