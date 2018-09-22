@@ -8,7 +8,7 @@ class Ccontent extends Mcontent
     {
         $result = $this->prepareContent($pageid);
 
-        $row = mysqli_fetch_assoc($result);
+        $row = $result->fetch();
         return $row;
     }
 }

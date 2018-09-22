@@ -12,7 +12,13 @@ namespace app\classes;
 class Db extends Config
 {
     private static $instance = null; // объект для работы с БД
-    private static $handler; // идентефикатор соединения
+    /** @var $DBH \PDO */
+    private static $DBH; // идентефикатор соединения
+    private static $DSN = "mysql:host=".self::DB_HOST.";dbname=".self::DB_NAME.";charset=".self::SQLCHARSET;
+    private static $OPT = [
+                        \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+                        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+    ];
 
     // закрываем возможность создания и дублирования объектов
     private function  __construct()
@@ -22,7 +28,7 @@ class Db extends Config
     private function __clone(){}
     private function __wakeup(){}
 
-    // объект для бароты с БД
+    // объект для работы с БД
     public static function getInstance()
     {
         if (self::$instance === null)
@@ -37,32 +43,39 @@ class Db extends Config
     // соединяемся с БД
     private function open_connection()
     {
-        self::$handler = mysqli_connect(self::DB_HOST, self::DB_USER, self::DB_PASS, self::DB_NAME);
-
-        // если соединение не открыто, выдаем сообщение об ошибке
-        if (!self::$handler)
+        try
         {
-            die("Ошибка соединения с базой данных: ". mysqli_error());
+          self::$DBH = new \PDO(self::$DSN,self::DB_USER,self::DB_PASS,self::$OPT);
+        }
+        catch(\PDOException $e)
+        {
+            echo "Извините, но операция подключения к БД не может быть выполнена";
+            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
         }
 
-        // установка принудительной кодировки UTF-8
-        mysqli_query(self::$handler, "set names utf8") or die ("set names utf8 failed");
-        //echo "Подключились к БД";
     }
 
     // реализация запроса к БД
-    public function sql($query)
+    public function sql($query, $params = NULL, $emulate = true)
     {
-        $result = mysqli_query(self::$handler, $query);
-
-        // если запрос не удался, выдаем сообщение об ошибке
-        if (!$result)
+        if ($params!=NULL)
         {
-            die ("Ошибка запроса к базе данных: ". mysqli_error());
+            $STH =  self::$DBH->prepare($query);
+
+            self::$DBH->setAttribute(\PDO::ATTR_EMULATE_PREPARES, $emulate);
+            $STH->execute($params);
+            return $STH;
+        }
+        else
+        {
+            $STH = self::$DBH->query($query);
+            return $STH;
         }
 
-        return $result;
+
     }
+
+
 
 }
 ?>

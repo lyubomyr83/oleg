@@ -20,7 +20,8 @@ try{
 
     //$STH = $DBH->prepare
 }
-catch (PDOException $e)
+catch
+(PDOException $e)
 {
     echo "Извините, но операция подключения к БД не может быть выполнена";
     file_put_contents('log.txt',$e->getMessage()."\n",FILE_APPEND);

@@ -7,7 +7,7 @@ class Cmenu extends Mmenu
     {
         $result = $this->prepareMenu();
 
-        while ($row = mysqli_fetch_assoc($result))
+        while ($row = $result->fetch())
         {
             $menu[] = $row;
         }
