@@ -23,19 +23,17 @@ class MCRUD
         $sql = "UPDATE pages SET ";
         foreach ($data as $k=>$v)
         {
-            $sql.= "{$k}=':{$k}', ";
+            $sql.= "{$k}=:{$k}, ";
         }
 
         $sql = substr($sql,0,-2);
 
         $sql.= " WHERE id='{$id}'";
 
-        echo $sql;
-
-        if($result = Db::getInstance()->sql($sql))
+        if($result = Db::getInstance()->sql($sql,$data))
         {
             echo "<span class='green'><br><br>Данные успешно обновлены!!!</span>";
-            //header( 'Refresh:2; URL=' );
+            header( 'Refresh:2; URL=' );
             return $result;
         }
 
