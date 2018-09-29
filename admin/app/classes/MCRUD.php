@@ -20,7 +20,7 @@ class MCRUD
 
     public function updatePageData($id,$data)
     {
-        $sql = "UPDATE pages SET ";
+        /*$sql = "UPDATE pages SET ";
         foreach ($data as $k=>$v)
         {
             $sql.= "{$k}=:{$k}, ";
@@ -35,7 +35,7 @@ class MCRUD
             echo "<span class='green'><br><br>Данные успешно обновлены!!!</span>";
             header( 'Refresh:2; URL=' );
             return $result;
-        }
-
+        }*/
+        Db::getInstance()->update("pages", $data, array('id'=>$id));
     }
 }
