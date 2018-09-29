@@ -16,8 +16,8 @@ class Db extends Config
     private static $DBH; // идентефикатор соединения
     private static $DSN = "mysql:host=".self::DB_HOST.";dbname=".self::DB_NAME.";charset=".self::SQLCHARSET;
     private static $OPT = [
-                        \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
-                        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+        \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
     ];
 
     // закрываем возможность создания и дублирования объектов
@@ -33,7 +33,7 @@ class Db extends Config
     {
         if (self::$instance === null)
         {
-           self::$instance = new self;
+            self::$instance = new self();
         }
 
         return self::$instance;
@@ -45,7 +45,7 @@ class Db extends Config
     {
         try
         {
-          self::$DBH = new \PDO(self::$DSN,self::DB_USER,self::DB_PASS,self::$OPT);
+            self::$DBH = new \PDO(self::$DSN,self::DB_USER,self::DB_PASS,self::$OPT);
         }
         catch(\PDOException $e)
         {
@@ -74,8 +74,6 @@ class Db extends Config
 
 
     }
-
-
 
 }
 ?>
