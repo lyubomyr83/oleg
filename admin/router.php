@@ -1,4 +1,6 @@
 <?php
+namespace app\classes;
+
 if($_GET)
 {
     if($_GET['page']=="list")
@@ -11,11 +13,12 @@ if($_GET)
     }
 }
 
+/** @var $page \app\classes\CCRUD*/
 if($_POST)
 {
     if($_GET["page"]=="edit")
     {
-        $page = new \app\classes\CCRUD();
+        $page = Factory::build("CCRUD");
         $page->updatePage($_GET["id"],$_POST);
     }
 }

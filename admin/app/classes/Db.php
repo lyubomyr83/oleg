@@ -45,20 +45,72 @@ class Db extends Config
     private function open_connection()
     {
         try
-    {
-        self::$DBH = new \PDO(self::$DSN,self::DB_USER,self::DB_PASS,self::$OPT);
-    }
-    catch(\PDOException $e)
-    {
-        echo "Извините, но операция подключения к БД не может быть выполнена";
-        // пишем все ошибки в файл с логами
-        file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
-    }
+        {
+            self::$DBH = new \PDO(self::$DSN,self::DB_USER,self::DB_PASS,self::$OPT);
+        }
+        catch(\PDOException $e)
+        {
+            echo "Извините, но операция подключения к БД не может быть выполнена";
+            // пишем все ошибки в файл с логами
+            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+        }
 
     }
 
-    // реализация запроса к БД
-    public function sql($query, $values = NULL)
+
+    // CRUD methods
+    //
+    public function create ($table, $data, $timestamps=false)
+    {
+        $sql = "INSERT INTO {$table} (";
+        foreach ($data as $k=>$v)
+        {
+            $sql.= "{$k}, ";
+        }
+
+        if ($timestamps)
+        {
+
+            $sql .= 'created, ';
+        }
+
+        $sql = substr($sql,0,-2);
+
+        $sql .=") VALUES(";
+
+        foreach ($data as $k=>$v)
+        {
+            $sql.= ":{$k}, ";
+        }
+
+        if ($timestamps)
+        {
+
+            $sql .= ':created, ';
+            $data['created'] = time();
+        }
+
+        $sql = substr($sql,0,-2);
+
+        $sql .=")";
+
+        try
+        {
+            if($this->read($sql,$data))
+            {
+                echo "Данные были успешно добавлены";
+            }
+
+        }
+        catch(\PDOException $e)
+        {
+            echo "Извините, но операция не может быть выполнена";
+            // пишем все ошибки в файл с логами
+            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+        }
+    }
+    //
+    public function read($query, $values = NULL)
     {
         // если вместе с запросом был передан массив с данными
         if ($values!=NULL)
@@ -73,18 +125,6 @@ class Db extends Config
             $STH = self::$DBH->query($query);
         }
         return $STH;
-    }
-
-    // CRUD methods
-    //
-    public function create()
-    {
-
-    }
-    //
-    public function read()
-    {
-
     }
     //
     public function update($table, $data, $where = NULL)
@@ -101,15 +141,19 @@ class Db extends Config
         {
             foreach ($where as $col=>$value)
             {
-                $sql.= " WHERE {$col}='{$value}'";
+                $sql.= " WHERE {$col}='{$value}' AND";
             }
+
+            $sql = substr($sql,0,-3);
         }
-
-
 
         try
         {
-            $this->sql($sql, $data);
+            if($this->read($sql, $data))
+            {
+                echo "Данные были успешно обновлены";
+            }
+
         }
         catch(\PDOException $e)
         {
@@ -119,10 +163,25 @@ class Db extends Config
         }
     }
     //
-    public function delete()
+    public function delete($table, $where)
     {
+        $sql = "DELETE FROM {$table} WHERE id={$where}";
+
+        try
+        {
+            if($this->read($sql))
+            {
+                echo "Данные были успешно удалены";
+            }
+
+        }
+        catch(\PDOException $e)
+        {
+            echo "Извините, но операция не может быть выполнена";
+            // пишем все ошибки в файл с логами
+            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+        }
 
     }
 }
 ?>
-

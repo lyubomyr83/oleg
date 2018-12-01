@@ -1,5 +1,7 @@
 <?php
-$editPage = new app\classes\CCRUD();
+namespace app\classes;
+
+$editPage = Factory::build("CCRUD");
 $page = $editPage->editPage($_GET["id"]);
 ?>
 <h2>
