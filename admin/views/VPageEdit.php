@@ -29,3 +29,6 @@ $page = $editPage->editPage($_GET["id"]);
         <div class="col-md-11"><input type="submit" value="Сохранить"></div>
     </div>
 </form>
+
+
+

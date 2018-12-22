@@ -18,8 +18,18 @@ class MCRUD
         return $result;
     }
 
+    public function addPageData($data)
+    {
+        Db::getInstance()->create("pages",$data,TRUE);
+    }
+
     public function updatePageData($id,$data)
     {
         Db::getInstance()->update("pages", $data, array('id'=>$id));
+    }
+
+    public function deletePageData($id)
+    {
+        Db::getInstance()->delete("pages",$id);
     }
 }

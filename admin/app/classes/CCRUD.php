@@ -4,6 +4,7 @@ namespace app\classes;
 
 class CCRUD extends MCRUD
 {
+    // список страниц
     public function getPagesList()
     {
         $result = $this->preparePagesList();
@@ -12,6 +13,13 @@ class CCRUD extends MCRUD
         return $pages;
     }
 
+    //добавляем страницу
+    public function addPage($data)
+    {
+        $this->addPageData($data);
+    }
+
+    // редактировать страницу
     public function editPage($id)
     {
         $result = $this->getPageDataForEdit($id);
@@ -19,8 +27,15 @@ class CCRUD extends MCRUD
         return $page;
     }
 
+    // обновить страницу
     public function updatePage($id, $data)
     {
         $result = $this->updatePageData($id, $data);
+    }
+
+    // удалить страницу
+    public function deletePage($id)
+    {
+        $this->deletePageData($id);
     }
 }
