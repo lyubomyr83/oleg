@@ -1,4 +1,5 @@
 <?php
+session_start();
 // автозагрузка классов
 function __autoload($name)
 {

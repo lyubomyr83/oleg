@@ -1,47 +1,70 @@
 <?php
 namespace app\classes;
-/** @var $page \app\classes\CCRUD*/
 
-// если данные пришли в ссылке
-if($_GET)
+// если пользователь не залогинен
+if(!$_SESSION['loged'])
 {
-    // список страниц
-    if($_GET['page']=="list")
+
+    if ($_POST)
     {
-        require_once "views/VPageList.php";
+        /**
+         * @var $login Clogin
+         */
+        $login = Factory::build('Clogin');
+        $login->checkLogin($_POST);
     }
-    // добавление страницы
-    if($_GET["page"]=="add")
+    else
     {
-        require_once "views/VPageAdd.php";
+        require_once "views/VLoginForm.php";
     }
-    // редактирование страницы
-    if($_GET["page"]=="edit")
-    {
-        require_once "views/VPageEdit.php";
-    }
-    // удаление страницы
-    if($_GET["page"]=="delete")
-    {
-        $page = Factory::build("CCRUD");
-        $page->deletePage($_GET["id"]);
-    }
+
 }
-
-// если данные пришли c формы
-if($_POST)
+else
 {
-    // добавление страницы
-    if($_GET["page"]=="add")
+    require_once "menu.php";
+    // если данные пришли в ссылке
+    if($_GET)
     {
-        $page = Factory::build("CCRUD");
-        $page->addPage($_POST);
+        // список страниц
+        if($_GET['page']=="list")
+        {
+            require_once "views/VPageList.php";
+        }
+        // добавление страницы
+        if($_GET["page"]=="add")
+        {
+            require_once "views/VPageAdd.php";
+        }
+        // редактирование страницы
+        if($_GET["page"]=="edit")
+        {
+            require_once "views/VPageEdit.php";
+        }
+        // удаление страницы
+        if($_GET["page"]=="delete")
+        {
+            $page = Factory::build("CCRUD");
+            $page->deletePage($_GET["id"]);
+        }
     }
 
-    // редактирование страницы
-    if($_GET["page"]=="edit")
+    // если данные пришли c формы
+    if($_POST)
     {
-        $page = Factory::build("CCRUD");
-        $page->updatePage($_GET["id"],$_POST);
+        // авторизация
+
+        // добавление страницы
+        if($_GET["page"]=="add")
+        {
+            $page = Factory::build("CCRUD");
+            $page->addPage($_POST);
+        }
+
+        // редактирование страницы
+        if($_GET["page"]=="edit")
+        {
+            $page = Factory::build("CCRUD");
+            $page->updatePage($_GET["id"],$_POST);
+        }
     }
 }
