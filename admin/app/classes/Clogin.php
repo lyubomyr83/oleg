@@ -8,7 +8,6 @@ class Clogin extends Mlogin
     {
         $result = ($this->checkUserLogin($user));
         $loged = $result->fetch();
-        var_dump($loged);
 
     }
 }
