@@ -46,6 +46,12 @@ else
             $page = Factory::build("CCRUD");
             $page->deletePage($_GET["id"]);
         }
+        // выход
+        if($_GET["page"]=="exit")
+        {
+            unset($_SESSION['loged']);
+            header('Refresh: 0; URL=index.php');
+        }
     }
 
     // если данные пришли c формы

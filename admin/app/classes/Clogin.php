@@ -8,6 +8,7 @@ class Clogin extends Mlogin
     {
         $result = ($this->checkUserLogin($user));
         $loged = $result->fetch();
+        $_SESSION['loged'] = $loged['name'];
 
     }
 }
