@@ -47,3 +47,25 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+#menu ul
+{
+    list-style-type: none;
+}
+
+#menu a
+{
+    background-color: blue;
+    color: white;
+    display: block;
+    width: 200px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#menu a:hover
+{
+    background-color: darkgray;
+}

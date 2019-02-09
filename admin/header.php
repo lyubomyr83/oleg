@@ -6,4 +6,27 @@
     <link href="style/style.css" rel="stylesheet" />
     <title></title>
 </head>
-<body class="text-center">
+<body>
+
+    <?php
+    if($_SESSION['loged'])
+    {
+    ?>
+        <div class="container">
+            <div class="row">
+                <div id="menu" class="col-md">
+                    <?php
+
+                    {
+                       require_once "menu.php";
+                    }
+                    ?>
+                </div>
+                <div class="col-md">
+                    <?php require_once "router.php"; ?>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    ?>

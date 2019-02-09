@@ -21,7 +21,6 @@ if(!$_SESSION['loged'])
 }
 else
 {
-    require_once "menu.php";
     // если данные пришли в ссылке
     if($_GET)
     {

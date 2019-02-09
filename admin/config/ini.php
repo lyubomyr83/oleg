@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 // автозагрузка классов
 function __autoload($name)
 {
@@ -8,3 +9,4 @@ function __autoload($name)
 
     require_once($name.'.php');
 }
+
