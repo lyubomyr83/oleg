@@ -1,6 +1,22 @@
-<ul>
-    <li><a href="?page=exit"><?=$_SESSION['loged']?> | Выход</a></li>
-    <li><a href="index.php?page=list">Список страниц</a></li>
-    <li><a href="index.php?page=add">Добавить страницу</a></li>
-    <li><a href="../index.php" target="_blank">На сайт</a></li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Навигация</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="?page=exit""><?=$_SESSION['loged']?> | Выход <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?page=list">Список страниц</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?page=add">Добавить страницу</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">На сайт</a>
+            </li>
+        </ul>
+    </div>
+</nav>

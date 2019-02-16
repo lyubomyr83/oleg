@@ -1,10 +1,11 @@
 html,
 body {
     height: 100%;
+    background: url("../../img/menu_background.jpg");
 }
 
 body {
-    display: -ms-flexbox;
+  /*  display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     -ms-flex-align: center;
@@ -14,8 +15,23 @@ body {
     -webkit-box-pack: center;
     justify-content: center;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 40px;*/
+    padding: 0px;
+    margin: 0px ;
     background-color: #f5f5f5;
+}
+
+h2{
+    color: burlywood;
+    background-color: darkslategray;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+a{
+    color: whitesmoke;
 }
 
 .form-signin {
@@ -55,17 +71,21 @@ body {
 
 #menu a
 {
-    background-color: blue;
-    color: white;
     display: block;
-    width: 200px;
-    margin-bottom: 5px;
+    text-decoration: none;
+    background-color: #1C527F;
+    color: whitesmoke;
+    margin: 10px 0;
     padding: 10px;
     border-radius: 10px;
-    text-decoration: none;
+
 }
 
 #menu a:hover
 {
-    background-color: darkgray;
+    background: url("../../img/79.png");
+    transition-duration: 1s;
+    padding-left: 40px;
+    margin-left: 40px;
+
 }

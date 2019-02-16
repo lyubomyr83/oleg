@@ -12,18 +12,21 @@
     if($_SESSION['loged'])
     {
     ?>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div id="menu" class="col-md">
-                    <?php
+                <div class="col">
+                        <?php
 
-                    {
-                       require_once "menu.php";
-                    }
-                    ?>
+                        {
+                           require_once "menu.php";
+                        }
+                        ?>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <?php require_once "router.php"; ?>
+                <div class="col">
+                    <div class="col-">
+                        <?php require_once "router.php"; ?>
+                    </div>
                 </div>
             </div>
         </div>
