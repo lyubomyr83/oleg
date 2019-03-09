@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     background: url("../../img/menu_background.jpg");
+    color: maroon;
 }
 
 body {
@@ -16,8 +17,9 @@ body {
     justify-content: center;
     padding-top: 40px;
     padding-bottom: 40px;*/
-    padding: 0px;
-    margin: 0px ;
+    padding: 20px;
+    margin: 0 auto;
+    min-height: 75rem;
     background-color: #f5f5f5;
 }
 
@@ -26,7 +28,7 @@ h2{
     background-color: darkslategray;
     text-align: center;
     padding: 10px;
-    margin-top: 10px;
+
     border-radius: 10px;
 }
 
@@ -88,4 +90,8 @@ a{
     padding-left: 40px;
     margin-left: 40px;
 
+}
+
+.navbar {
+    border-radius: 10px;
 }

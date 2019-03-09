@@ -2,24 +2,25 @@
 <html lang="ru">
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="style/style.css" rel="stylesheet" />
-    <title></title>
+    <title>Зона администрирования</title>
+
 </head>
 <body>
 
     <?php
     if($_SESSION['loged'])
     {
+
     ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
                         <?php
-
-                        {
-                           require_once "menu.php";
-                        }
+                        require_once "menu.php";
                         ?>
                     </div>
                 </div>

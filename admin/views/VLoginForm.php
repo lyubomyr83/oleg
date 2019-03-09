@@ -1,5 +1,5 @@
 <form method="post" class="form-signin">
-    <img class="mb-4" src="#" alt="" width="72" height="72">
+    <img src="../img/logo.png" class="mb-4" src="#" alt="" width="72">
     <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
     <label for="inputLogin" class="sr-only">Логин</label>
     <input name="login" type="text" id="inputLogin" class="form-control" placeholder="Ваш логин" required autofocus>
