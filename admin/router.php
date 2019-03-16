@@ -1,6 +1,5 @@
 <?php
 namespace app\classes;
-
 // если пользователь не залогинен
 if(!$_SESSION['loged'])
 {
