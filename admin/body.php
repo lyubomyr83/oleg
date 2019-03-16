@@ -1,10 +1,30 @@
+<?php
+namespace app\classes;
+?>
+
 <body>
 
     <?php
-    if($_SESSION['loged'])
+    // если пользователь не залогинен
+    if(!$_SESSION['loged'])
+    {
+        if ($_POST)
+        {
+            /**
+             * @var $login Clogin
+             */
+            $login = Factory::build('Clogin');
+            $login->checkLogin($_POST);
+        }
+        else
+        {
+            require_once "views/VLoginForm.php";
+        }
+    }
+    else
     {
 
-    ?>
+        ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
@@ -21,7 +41,6 @@
                 </div>
             </div>
         </div>
+        <?php
 
-    <?php
     }
-    ?>

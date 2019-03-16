@@ -1,25 +1,6 @@
 <?php
 namespace app\classes;
-// если пользователь не залогинен
-if(!$_SESSION['loged'])
-{
 
-    if ($_POST)
-    {
-        /**
-         * @var $login Clogin
-         */
-        $login = Factory::build('Clogin');
-        $login->checkLogin($_POST);
-    }
-    else
-    {
-        require_once "views/VLoginForm.php";
-    }
-
-}
-else
-{
     // если данные пришли в ссылке
     if($_GET)
     {
@@ -71,4 +52,3 @@ else
             $page->updatePage($_GET["id"],$_POST);
         }
     }
-}
