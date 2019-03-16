@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
+<nav class="navbar navbar-expand-md navbar-light bg-light mb-4 menu">
     <a class="navbar-brand" href="#"><img src="../img/logo.png" width="30"  alt="..."> Навигация</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

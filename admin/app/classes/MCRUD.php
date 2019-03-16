@@ -6,7 +6,7 @@ class MCRUD
 {
     public function preparePagesList()
     {
-        $sql = "SELECT id,menu_name,menu_icon FROM pages";
+        $sql = "SELECT id,menu_name,menu_icon,created_at,updated_at FROM pages";
         $result = Db::getInstance()->read($sql);
         return $result;
     }
