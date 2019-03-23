@@ -115,6 +115,8 @@ class Db extends Config
         {
             if($this->read($sql,$data))
             {
+                header('Refresh: 0');
+
                 echo "Данные были успешно добавлены";
             }
 
@@ -151,6 +153,7 @@ class Db extends Config
         {
             if($this->read($sql, $data))
             {
+                header('Refresh: 0');
                 echo "Данные были успешно обновлены";
             }
 

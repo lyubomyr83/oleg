@@ -100,3 +100,22 @@ a{
     margin: 0;
     padding: 0;
 }
+
+.page_list
+{
+    margin-top: 10px;
+    border-bottom: 3px whitesmoke;
+}
+
+
+.page_list_name
+{
+    background-color: darkslategray;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.page_list_name a
+{
+    color: burlywood;
+}

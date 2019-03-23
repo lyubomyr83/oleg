@@ -20,8 +20,8 @@ $all_pages = $pages->getPagesList();
 foreach ($all_pages as $v)
 {
     ?>
-    <div class="row">
-        <div class="col-md"><a href='index.php?page=edit&id=<?=$v['id']?>'><?=$v['menu_name']?></a></div>
+    <div class="row page_list">
+        <div class="col-md page_list_name"><a href='index.php?page=edit&id=<?=$v['id']?>'><?=$v['menu_name']?></a></div>
         <div class="col-md"><a href='index.php?page=edit&id=<?=$v['id']?>'> Редактировать </a></div>
         <div class="col-md"><a href='index.php?page=delete&id=<?=$v['id']?>'> Удалить</a><br></div>
         <div class="col-md"><?=$v['updated_at']?></div>

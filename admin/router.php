@@ -1,6 +1,7 @@
 <?php
 namespace app\classes;
 
+/* @var $page CCRUD */
     // если данные пришли в ссылке
     if($_GET)
     {
