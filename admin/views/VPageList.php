@@ -7,15 +7,6 @@ $all_pages = $pages->getPagesList();
 
 <h2>Список страниц</h2>
 <div class="container">
-        <div class="row">
-            <div class="col-md">Название</div>
-            <div class="col-md">Редактировать</div>
-            <div class="col-md">Удалить</div>
-            <div class="col-md">Изменена</div>
-            <div class="col-md">Создана</div>
-        </div>
-
-
 <?php
 foreach ($all_pages as $v)
 {
