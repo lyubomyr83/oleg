@@ -15,8 +15,8 @@ foreach ($all_pages as $v)
         <div class="col-md page_list_name"><a href='index.php?page=edit&id=<?=$v['id']?>'><?=$v['menu_name']?></a></div>
         <div class="col-md"><a href='index.php?page=edit&id=<?=$v['id']?>'> Редактировать </a></div>
         <div class="col-md"><a href='index.php?page=delete&id=<?=$v['id']?>'> Удалить</a><br></div>
-        <div class="col-md"><?=$v['updated_at']?></div>
-        <div class="col-md"><?=$v['created_at']?></div>
+        <div class="col-md"><i class="icon-pencil icon-large"> </i><?=($v['updated_at'])? date("d.m.Y в H:i:s",$v['updated_at']):"";?></div>
+        <div class="col-md"><i class="icon-plus-sign icon-large"></i> <?=($v['created_at'])? date("d.m.Y в H:i:s",$v['created_at']):"";?></div>
     </div>
 
 

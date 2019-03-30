@@ -65,6 +65,11 @@ a{
     border-top-right-radius: 0;
 }
 
+.header
+{
+    padding: 0;
+}
+
 #menu ul
 {
     list-style-type: none;
@@ -111,7 +116,7 @@ a{
 .page_list_name
 {
     background-color: darkslategray;
-    border-radius: 5px;
+    border-radius: 10px;
     font-style: italic;
 }
 

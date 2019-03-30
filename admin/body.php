@@ -27,7 +27,7 @@ namespace app\classes;
         ?>
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col header">
                         <?php
                         require_once "menu.php";
                         ?>
