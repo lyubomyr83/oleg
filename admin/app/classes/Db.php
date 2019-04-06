@@ -131,10 +131,17 @@ class Db extends Config
     // обновление
     public function update($table, $data, $where = NULL, $timestamps=false)
     {
+
         $sql = "UPDATE {$table} SET ";
         foreach ($data as $k=>$v)
         {
             $sql.= "{$k}=:{$k}, ";
+        }
+
+        if ($timestamps)
+        {
+            $data['updated_at'] = time();
+            $sql .= 'updated_at=:updated_at, ';
         }
 
         $sql = substr($sql,0,-2);
@@ -149,11 +156,13 @@ class Db extends Config
             $sql = substr($sql,0,-3);
         }
 
+        echo $sql;
+
         try
         {
             if($this->read($sql, $data))
             {
-                header('Refresh: 0');
+                //header('Refresh: 0');
                 echo "Данные были успешно обновлены";
             }
 

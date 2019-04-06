@@ -12,7 +12,7 @@ foreach ($all_pages as $v)
 {
     ?>
     <div class="row page_list">
-        <div class="col-md page_list_name"><a href='index.php?page=edit&id=<?=$v['id']?>'><?=$v['menu_name']?></a></div>
+        <div class="col-md page_list_name"><a href='index.php?page=edit&id=<?=$v['id']?>'><i class="<?=$v['menu_icon']?> icon-large"> </i> <?=$v['menu_name']?></a></div>
         <div class="col-md"><a href='index.php?page=edit&id=<?=$v['id']?>'> Редактировать </a></div>
         <div class="col-md"><a href='index.php?page=delete&id=<?=$v['id']?>'> Удалить</a><br></div>
         <div class="col-md"><i class="icon-pencil icon-large"> </i><?=($v['updated_at'])? date("d.m.Y в H:i:s",$v['updated_at']):"";?></div>

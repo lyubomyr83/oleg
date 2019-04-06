@@ -25,7 +25,7 @@ class MCRUD
 
     public function updatePageData($id,$data)
     {
-        Db::getInstance()->update("pages", $data, array('id'=>$id));
+        Db::getInstance()->update("pages", $data, array('id'=>$id),TRUE);
     }
 
     public function deletePageData($id)
