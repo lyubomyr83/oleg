@@ -4,7 +4,7 @@
         <div class="col-md-11"><input type="text" name="title"></div>
     </div>
     <div class="row">
-        <div class="col-md-1">иконка</div>
+        <div class="col-md-1">иконка <a href="https://fontawesome.veliovgroup.com/design.html" target="_blank">(список)</a></div>
         <div class="col-md-11"><input type="text" name="menu_icon"></div>
     </div>
     <div class="row">
