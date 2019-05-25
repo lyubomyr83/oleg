@@ -13,6 +13,12 @@ class CCRUD extends MCRUD
         return $pages;
     }
 
+    // позиция в меню
+    protected function pos_inc($pos)
+    {
+        $this->setPagePosition($pos);
+    }
+
     //добавляем страницу
     public function addPage($data)
     {
@@ -30,6 +36,7 @@ class CCRUD extends MCRUD
     // обновить страницу
     public function updatePage($id, $data)
     {
+        $this->pos_inc($data['position']);
         $result = $this->updatePageData($id, $data);
     }
 

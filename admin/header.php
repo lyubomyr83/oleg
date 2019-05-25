@@ -8,7 +8,18 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link href="style/style.css" rel="stylesheet" />
+    <?php
+
+    // подключаем нужную таблицу стилей
+    if(!$_SESSION['loged'])
+    {
+        echo  "<link href='style/login.css' rel='stylesheet' />";
+    }
+    else
+    {
+        echo  "<link href='style/style.css' rel='stylesheet' />";
+    }
+    ?>
     <!--End CSS-->
 
 

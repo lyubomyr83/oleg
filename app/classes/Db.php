@@ -58,6 +58,7 @@ class Db extends Config
     // реализация запроса к БД
     public function sql($query, $params = NULL, $emulate = true)
     {
+
         if ($params!=NULL)
         {
             $STH =  self::$DBH->prepare($query);
@@ -68,6 +69,7 @@ class Db extends Config
         }
         else
         {
+            echo $query;
             $STH = self::$DBH->query($query);
             return $STH;
         }
